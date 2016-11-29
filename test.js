@@ -1,4 +1,5 @@
 import fs from 'fs';
+const path = require('path');
 import pathExists from 'path-exists';
 import tempfile from 'tempfile';
 import test from 'ava';
@@ -26,6 +27,9 @@ test('Junk files should be removed', async (t) => {
     });
 
     const junkFiles = await trashJunk(tmpdir);
+    const junkFilesWithPath = junkFiles.map(file => file.replace('/private', ''));
+    const fixturesWithPath = fixtures.map(file => path.resolve(tmpdir, file));
+    console.log(fixturesWithPath);
 
-    t.deepEqual(junkFiles.sort(), fixtures.sort());
+    t.deepEqual(junkFilesWithPath.sort(), fixturesWithPath.sort());
 });
