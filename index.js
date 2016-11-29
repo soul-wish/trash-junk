@@ -1,4 +1,5 @@
 const readDir = require('fs-readdir-recursive');
+const path = require('path');
 const junk = require('junk');
 const trash = require('trash');
 
@@ -10,7 +11,7 @@ module.exports = (input) => {
     }
     readDir(input, x => x).forEach((file) => {
         if (junk.is(file)) {
-            junkFiles.push(file);
+            junkFiles.push(path.resolve(file));
         }
     });
     return new Promise((resolve) => {
