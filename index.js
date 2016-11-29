@@ -11,7 +11,7 @@ module.exports = (input) => {
     }
     readDir(input, x => x).forEach((file) => {
         if (junk.is(file)) {
-            junkFiles.push(path.resolve(file));
+            junkFiles.push(path.resolve(__dirname, input, file));
         }
     });
     return new Promise((resolve) => {

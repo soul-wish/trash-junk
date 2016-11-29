@@ -27,9 +27,8 @@ test('Junk files should be removed', async (t) => {
     });
 
     const junkFiles = await trashJunk(tmpdir);
-    const junkFilesWithPath = junkFiles.map(file => file.replace('/private', ''));
     const fixturesWithPath = fixtures.map(file => path.resolve(tmpdir, file));
     console.log(fixturesWithPath);
 
-    t.deepEqual(junkFilesWithPath.sort(), fixturesWithPath.sort());
+    t.deepEqual(junkFiles.sort(), fixturesWithPath.sort());
 });
