@@ -1,0 +1,45 @@
+{
+  "name": "trash-junk",
+  "version": "0.0.0",
+  "description": "Move junk files to the trash",
+  "license": "MIT",
+  "repository": "soul-wish/trash-junk",
+  "author": {
+    "name": "Sergey Lysenko",
+    "email": "soulwish.ls@gmail.com",
+    "url": "soulwish.info"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "trash",
+    "junk",
+    "files",
+    "folders",
+    "DS_STORE",
+    "temp",
+    "tmp",
+    "garbage",
+    "clean",
+    "Thumbs.db"
+  ],
+  "dependencies": {
+    "fs-readdir-recursive": "^1.0.0",
+    "junk": "^2.0.0",
+    "trash": "^4.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "path-exists": "^3.0.0"
+  }
+}
